@@ -5,7 +5,9 @@
 //  4. define 
 
 
-
+var lowercase = "abcdefghijklmnopqrstuvwx"
+var number = "0123456789"
+var special = "!@#$%^&*()"
 
 var generateBtn = document.querySelector("#generate");
 
@@ -14,12 +16,13 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+  
 
   passwordText.value = password;
 }
 
   function generatePassword (){
-    var size = prompt("please enter 8 to 12 characters")
+    var size = prompt("Please enter 8 to 12 characters")
     console.log(size)
     //then do validation, if im checking 
 
@@ -37,13 +40,9 @@ function writePassword() {
       console.log(isSpecial)
 
       if (isLowercase ===true) {
-        
+
       }
       
-
-
-
-
     }
     else {
       alert('invalid entery')
