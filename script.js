@@ -34,6 +34,7 @@ function generatePassword() {
   // validation for checking if true/false
   if (size >= 8 && size <= 128) {
     var isLowercase = confirm("include lowercase?");
+
     if (isLowercase === true) {
       charType.push("lower")
       console.log(isLowercase);
@@ -63,43 +64,45 @@ function generatePassword() {
 
     // finalpwd = finalpwd + lowercase[positionString];
     // console.log(finalpwd);
-    
+
 
     // for loop for pasword length 
     for (i = 0; i < size; i++) {
-      var randomType = Math.floor(Math.random() *charType.length)
-      
-      if (randomType === "lower") {
-        var randomLower = math.floor(Math.random() *26);
-        finalpwd=finalpwd + aplha[randomLower]
+      var randomType = Math.floor(Math.random() * charType.length)
+      console.log(randomType)
+
+      if (isLowercase && finalpwd.length<size) {
+        var randomLower = Math.floor(Math.random() * 26);
+        finalpwd = finalpwd + aplha[randomLower]
       }
 
-      if (randomType === "upper") {
-        var randomUpper= math.floor(Math.random() *26);
-        finalpwd=finalpwd + aplha[randomUpper].toUpperCase();
+      if (isUppercase && finalpwd.length<size) {
+        var randomUpper = Math.floor(Math.random() * 26);
+        finalpwd = finalpwd + aplha[randomUpper].toUpperCase();
       }
 
-      if (randomType === "number") {
-        var randomNumber= math.floor(Math.random() *9);
-        finalpwd=finalpwd + number[randomNumber]
+      if (isNumber && finalpwd.length<size) {
+        var randomNumber = Math.floor(Math.random() * 9);
+        finalpwd = finalpwd + number[randomNumber]
 
       }
 
-      if (randomType === "special") {
-        var randomSpecial = math.floor(Math.random() *special.length);
-        finalpwd=finalpwd + special[randomSpecial]
+      if (isSpecial && finalpwd.length<size) {
+        var randomSpecial = Math.floor(Math.random() * special.length);
+        finalpwd = finalpwd + special[randomSpecial]
 
       }
     }
 
   } else {
-  alert('invalid entry')
+    alert('invalid entry')
+  
   }
-
   return finalpwd;
 }
 
-    
+
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword)
+
