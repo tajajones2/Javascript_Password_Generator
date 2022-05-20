@@ -1,36 +1,39 @@
-# Javascript Password
+# Javascript Password Generator
 
 ## Description
+This project will demonstate creating an application that an employee can use to generate a random password based on criteria they've selected. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write.
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
 
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-
-## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+When you click the button to generate password, you will be presented with a series off prompts for password criteria.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+Once prompted for password criteria
+THEN you will select which criteria to include in the password.
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+Then you will be prompted for length of password 
+
+
+
+
+
+
+
+Application deployed at live URL.
+
+Application loads with no errors.
+
+Application GitHub URL submitted.
+
+GitHub repository that contains application code.
+
+<a href="https://tajajones2.github.io/Javascript_Password_Generator/">Click here for live link!</a>
+
+    
+![alt tag](./assets/images/javascript_password_screentshot.png)
+    
 
 ## Credits
 
