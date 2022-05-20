@@ -9,7 +9,7 @@
 
 
 
-var aplha = "abcdefghijklmnopqrstuvwx";
+var aplha = "abcdefghijklmnopqrstuvwxyz";
 var number = "0123456789";
 var special = "!@#$%^&*()";
 var finalpwd = "";
@@ -58,13 +58,7 @@ function generatePassword() {
       console.log(isSpecial);
     }
 
-    // if (isLowercase ===true) {
-    //   var positionString=Math.floor(Math.random() *26);
-
-
-    // finalpwd = finalpwd + lowercase[positionString];
-    // console.log(finalpwd);
-
+  
 
     // for loop for pasword length 
     for (i = 0; i < size; i++) {
@@ -72,18 +66,19 @@ function generatePassword() {
       console.log(randomType)
 
       if (isLowercase && finalpwd.length<size) {
-        var randomLower = Math.floor(Math.random() * 26);
-        finalpwd = finalpwd + aplha[randomLower]
+        var randomLower = Math.floor(Math.random() * aplha.length-1);
+        finalpwd = finalpwd + aplha[randomLower] 
+        
       }
-
+        /* conversion for uppercase*/ 
       if (isUppercase && finalpwd.length<size) {
-        var randomUpper = Math.floor(Math.random() * 26);
+        var randomUpper = Math.floor(Math.random() * aplha.length-1);
         finalpwd = finalpwd + aplha[randomUpper].toUpperCase();
       }
 
       if (isNumber && finalpwd.length<size) {
-        var randomNumber = Math.floor(Math.random() * 9);
-        finalpwd = finalpwd + number[randomNumber]
+        var randomNumber = Math.floor(Math.random() * number.length -1);
+        finalpwd = finalpwd + number[randomNumber] 
 
       }
 
@@ -95,13 +90,11 @@ function generatePassword() {
     }
 
   } else {
-    alert('invalid entry')
+    // alert('invalid entry')
   
   }
   return finalpwd;
 }
-
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword)
