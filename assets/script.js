@@ -62,8 +62,8 @@ function generatePassword() {
 
     // for loop for pasword length 
     for (i = 0; i < size; i++) {
-      var randomType = Math.floor(Math.random() * charType.length)
-      console.log(randomType)
+      var randomType = Math.floor(Math.random() * charType.length-1);
+      console.log(randomType);
 
       if (isLowercase && finalpwd.length<size) {
         var randomLower = Math.floor(Math.random() * aplha.length-1);
@@ -78,13 +78,13 @@ function generatePassword() {
 
       if (isNumber && finalpwd.length<size) {
         var randomNumber = Math.floor(Math.random() * number.length -1);
-        finalpwd = finalpwd + number[randomNumber] 
+        finalpwd = finalpwd + number[randomNumber];
 
       }
 
       if (isSpecial && finalpwd.length<size) {
         var randomSpecial = Math.floor(Math.random() * special.length);
-        finalpwd = finalpwd + special[randomSpecial]
+        finalpwd = finalpwd + special[randomSpecial];
 
       }
     }
