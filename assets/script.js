@@ -9,17 +9,19 @@
 
 
 
-var aplha = "abcdefghijklmnopqrstuvwxyz";
+var alpha = "abcdefghijklmnopqrstuvwxyz";
+var alphaupper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var number = "0123456789";
 var special = "!@#$%^&*()";
 var finalpwd = "";
-var charType = [];
+var characterPool = "";
 
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 
 function writePassword() {
+  finalpwd = ""
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
@@ -36,25 +38,25 @@ function generatePassword() {
     var isLowercase = confirm("include lowercase?");
 
     if (isLowercase === true) {
-      charType.push("lower")
+      characterPool += alpha
       console.log(isLowercase);
     }
 
     var isUppercase = confirm("include Uppercase?");
     if (isUppercase === true) {
-      charType.push("upper")
+      characterPool += alphaupper
       console.log(isUppercase);
     }
 
     var isNumber = confirm("include Number?");
     if (isNumber === true) {
-      charType.push("number")
+      characterPool += number
       console.log(isNumber);
     }
 
     var isSpecial = confirm("include Special?");
     if (isSpecial === true) {
-      charType.push("special")
+      characterPool += special
       console.log(isSpecial);
     }
 
@@ -62,31 +64,34 @@ function generatePassword() {
 
     // for loop for pasword length 
     for (i = 0; i < size; i++) {
-      var randomType = Math.floor(Math.random() * charType.length-1);
+      var randomType = Math.floor(Math.random() * characterPool.length-1);
       console.log(randomType);
+      finalpwd = finalpwd + characterPool[randomType]
 
-      if (isLowercase && finalpwd.length<size) {
-        var randomLower = Math.floor(Math.random() * aplha.length-1);
-        finalpwd = finalpwd + aplha[randomLower] 
+
+
+      // if (isLowercase && finalpwd.length<size) {
+      //   var randomLower = Math.floor(Math.random() * alpha.length-1);
+      //   finalpwd = finalpwd + alpha[randomLower] 
         
-      }
-        /* conversion for uppercase*/ 
-      if (isUppercase && finalpwd.length<size) {
-        var randomUpper = Math.floor(Math.random() * aplha.length-1);
-        finalpwd = finalpwd + aplha[randomUpper].toUpperCase();
-      }
+      // }
+      //   /* conversion for uppercase*/ 
+      // if (isUppercase && finalpwd.length<size) {
+      //   var randomUpper = Math.floor(Math.random() * alpha.length-1);
+      //   finalpwd = finalpwd + aplha[randomUpper].toUpperCase();
+      // }
 
-      if (isNumber && finalpwd.length<size) {
-        var randomNumber = Math.floor(Math.random() * number.length -1);
-        finalpwd = finalpwd + number[randomNumber];
+      // if (isNumber && finalpwd.length<size) {
+      //   var randomNumber = Math.floor(Math.random() * number.length -1);
+      //   finalpwd = finalpwd + number[randomNumber];
 
-      }
+      // }
 
-      if (isSpecial && finalpwd.length<size) {
-        var randomSpecial = Math.floor(Math.random() * special.length);
-        finalpwd = finalpwd + special[randomSpecial];
+      // if (isSpecial && finalpwd.length<size) {
+      //   var randomSpecial = Math.floor(Math.random() * special.length);
+      //   finalpwd = finalpwd + special[randomSpecial];
 
-      }
+    //   }
     }
 
   } else {
